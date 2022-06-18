@@ -17,4 +17,14 @@ public class ProductServiceImpl implements  ProductService{
     public List<ProductEntity> findAll(){
         return  repository.findAll();
     }
+
+    @Override
+    public ProductEntity create(ProductEntity product){
+        return repository.save(product);
+    }
+
+    @Override
+    public void delete(Long id){
+        repository.deleteById(id);
+    }
 }
